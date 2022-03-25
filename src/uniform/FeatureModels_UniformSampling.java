@@ -107,6 +107,8 @@ public class FeatureModels_UniformSampling {
   	int lowerBound = Integer.parseInt(args[1]); // they use 17738
 
         Solver cp = Factory.makeSolver();
+		cp.setTraceSearchFlag(false);
+		cp.setMode(Solver.PropaMode.SP);
 	
         IntVar[] x = new IntVar[N];
 	for (int i = 0; i < N; i++) {
